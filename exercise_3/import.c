@@ -35,13 +35,13 @@ void _start()
     uint64_t puts_fn = resolve_import(0, "puts");
     
     // Prepare arguments for puts call
-    volatile uint64_t args[13];
+    uint64_t args[13];
     args[0] = (uint64_t)"Hello from RISC-V!";
     for (int i = 1; i < 13; i++)
         args[i] = 0;
     
     // Call puts via host_call
-    host_call(puts_fn, (uint64_t*)args);
+    host_call(puts_fn, args);
     
     exit(0);
     asm volatile("ebreak");
