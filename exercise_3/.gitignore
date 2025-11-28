@@ -1,1 +1,6 @@
 *-solution.c
+*.o
+*.elf
+*.map
+*.pre.bin
+*.trace
